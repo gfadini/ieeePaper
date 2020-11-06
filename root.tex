@@ -1,0 +1,100 @@
+\documentclass[letterpaper, 10pt, conference]{ieeeconf}
+\IEEEoverridecommandlockouts
+\overrideIEEEmargins
+\pdfminorversion=4 		% https://ras.papercept.net/conferences/scripts/start.pl
+
+% Useful packages
+\usepackage{graphics, placeins}
+\usepackage{epsfig}
+\usepackage{mathptmx}
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{amssymb, amsmath, amsfonts, txfonts}
+\usepackage{lipsum}		% just for the sample, remove me
+
+% Bibliography
+\usepackage[backend=biber, style=numeric-comp , autocite=plain, sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+
+% Image folder
+\graphicspath{{./images/} {./}}
+
+% Custom commands
+\input{commands.tex}
+
+% Titlepage
+\def \MainTitle {Title}
+\title{\LARGE \bf \MainTitle}
+\author{
+    Author2$^{1}$, Author2$^{2}$%
+    %\thanks{*This work maybe is supported by some organization}%
+    \thanks{$^{1}$ Affiliation}%
+    \thanks{$^{2}$ Affiliation}%
+}
+
+\begin{document}
+
+	\maketitle
+	\thispagestyle{empty}
+	\pagestyle{empty}
+
+	\begin{abstract}
+		\begin{keywords}
+			key1, key2, key3
+		\end{keywords}
+		\lipsum[1-1]
+		\cite{author2019}
+	\end{abstract}
+
+    \section{INTRODUCTION}
+		\lipsum[1-3]
+
+    \section{METHODOLOGY}
+		\lipsum[1-5] \cite{author2020}
+
+	\section{RESULTS}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.49\textwidth]{example-image-a}
+			\caption{Example image}
+			\label{image:example}
+		\end{figure}
+		\lipsum[1-7] as in Fig. \ref{image:example}
+		\begin{table}[!tb]
+			\caption{Benchmark of the energy minimization}
+			\label{table:energy_monoped}
+			\begin{center}
+				\begin{tabular}{|c|c|c|c|}
+					\hline
+					\textbf{Type} & \textbf{Case A} & \textbf{Case B} & \textbf{Case C}\\
+					\hline \hline
+					\textit{Type A} & 1 & 2 & 3 \\
+					\hline
+					\textit{Type B}  & 4 & 5 & 6 \\
+					\hline
+				\end{tabular}
+				\caption{Example of table}
+			\end{center}
+		\end{table}
+
+	\section{CONCLUSION AND FUTURE WORK}
+		\lipsum[1-2]
+
+        %\addtolength{\textheight}{-12cm}
+        % This command balances the column lengths
+        % on the last page of the document manually. It shortens
+        % the textheight of the last page by a suitable amount.
+        % This command does not take effect until the next page
+        % so it should come on the page before the last. Make
+        % sure that you do not shorten the textheight too much.
+
+	\section*{APPENDIX}
+		\lipsum[1-2]
+          	% Just if strictly needed
+
+        \section*{ACKNOWLEDGMENT}
+        	\lipsum[1-2]
+
+	\printbibliography
+
+\end{document}

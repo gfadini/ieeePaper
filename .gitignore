@@ -1,0 +1,11 @@
+*.bbl
+*.bcf
+*.blg
+*.xmpi
+*.aux
+*.out
+*.log
+*.toc
+*.lof
+*.pdf
+*.run.xml
